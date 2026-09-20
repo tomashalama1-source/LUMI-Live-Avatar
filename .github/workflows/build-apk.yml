@@ -35,7 +35,7 @@ jobs:
       - name: Unpack LUMI project
         run: |
           rm -rf LUMI_Live_Avatar
-          unzip -q LUMI_Live_Avatar_MVP.zip
+          unzip -q LUMI_Live_Avatar_MVP_FIXED.zip
           test -f LUMI_Live_Avatar/android/settings.gradle.kts
 
       - name: Build debug APK
