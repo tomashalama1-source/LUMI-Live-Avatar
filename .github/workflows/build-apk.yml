@@ -32,10 +32,10 @@ jobs:
         with:
           gradle-version: '8.13'
 
-      - name: Unpack LUMI project
+      - name: Unpack LUMI GPU FAST
         run: |
           rm -rf LUMI_Live_Avatar
-          unzip -q LUMI_Live_Avatar_MVP_GPU_LIVE.zip
+          unzip -q LUMI_Live_Avatar_MVP_GPU_FAST.zip
           test -f LUMI_Live_Avatar/android/settings.gradle.kts
 
       - name: Build debug APK
@@ -44,11 +44,11 @@ jobs:
 
       - name: Rename APK
         run: |
-          cp LUMI_Live_Avatar/android/app/build/outputs/apk/debug/app-debug.apk LUMI.apk
+          cp LUMI_Live_Avatar/android/app/build/outputs/apk/debug/app-debug.apk LUMI-GPU-FAST.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: LUMI-Android-APK
-          path: LUMI.apk
+          name: LUMI-GPU-FAST-APK
+          path: LUMI-GPU-FAST.apk
           if-no-files-found: error
