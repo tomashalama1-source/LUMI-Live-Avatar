@@ -51,4 +51,4 @@ jobs:
         with:
           name: LUMI-Android-APK
           path: LUMI.apk
-          if-no
+          if-no-files-found: error
